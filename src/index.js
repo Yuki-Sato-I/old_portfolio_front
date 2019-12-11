@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import axios from "axios";
+
+//api server host
+axios.defaults.baseURL = process.env.REACT_APP_API_ENDPOINT;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

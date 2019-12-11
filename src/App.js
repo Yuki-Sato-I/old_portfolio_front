@@ -2,30 +2,41 @@ import React from 'react';
 import './App.css';
 import ReactFullpage from '@fullpage/react-fullpage';
 
+// my component
+import { Top } from './components/pages/top/top'
+import { NavBar } from './components/common/navbar'
+
 export const App = () =>  {
   return (
-    <ReactFullpage
-      //fullpage options
-      licenseKey = {'YOUR_KEY_HERE'}
-      scrollingSpeed = {1000} /* Options here */
+    <div className="container">
+      <NavBar />
+      <ReactFullpage
+        //fullpage options
+        licenseKey = {'YOUR_KEY_HERE'}
+        scrollingSpeed = {1000} /* Options here */
 
-      render={({ state, fullpageApi }) => {
-        console.log(state);
-        return (
-          <ReactFullpage.Wrapper>
-            <div className="section">
-              <p>Section 1 (welcome to fullpage.js)</p>
-              <button onClick={() => fullpageApi.moveSectionDown()}>
-                Click me to move down
-              </button>
-            </div>
-            <div className="section">
-              <p>Section 2</p>
-            </div>
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              <Top/>
+              <div className="section">
+                <p>Section 2</p>
+              </div>
+              <div className="section">
+                <p>Section 3</p>
+              </div>
+              <div className="section">
+                <p>Section 4</p>
+                {/* <button onClick={() => fullpageApi.moveSectionDown()}>
+                  Click me to move down
+                </button> */}
+              </div>
+
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
+    </div>
   );
 }
 
