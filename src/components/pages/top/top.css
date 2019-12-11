@@ -1,3 +1,21 @@
 .top-container {
   height: 100%;
+  padding-left: 50px;
+}
+
+.top-title {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.top-user-name {
+  font-size: 80px;
+  font-weight: bold;
+  color: #272727;
+  -webkit-text-stroke: 1px white;
+}
+
+.top-user-skills {
+  width: 600px;
+  word-break: normal;
 }
