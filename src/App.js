@@ -8,8 +8,13 @@ import { Top } from './components/pages/top/top'
 import { NavBar } from './components/common/navbar'
 
 export const App = () =>  {
+
   const [userData, setUserData] = useState([]);
   const [skillsData, setSkillsData] = useState();
+  const [topWorksData, setTopWorksData] = useState([]);
+
+  const [anchors, setAnchors] = useState(['top', 'works', 'allWorks', 'profile', 'contact']);
+
   const fetchData = useCallback( async() => {
 
     let user = await axios.get('/api/v1/users/1')
@@ -20,22 +25,34 @@ export const App = () =>  {
       .then(response => response.data)
       .catch(error => console.log(error));
 
+    let topWorks = await axios.get('/api/v1/works/top')
+      .then(response => response.data)
+      .catch(error => console.log(error));
+
+      setTopWorksData(topWorks);
       setSkillsData(skills);
       setUserData(user);
+
+    topWorks.map((work, index) => {
+      setAnchors(anchors.splice(2+index, 0, `work${index+1}`));
+    })
+    console.log(anchors);
   },[]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
+
   return (
     <div className="container">
-      <NavBar />
+      <NavBar works={topWorksData}/>
       <ReactFullpage
         //fullpage options
         licenseKey = {'YOUR_KEY_HERE'}
+        resize={true}
         scrollingSpeed = {1000} /* Options here */
-
+        anchors= { anchors }
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>

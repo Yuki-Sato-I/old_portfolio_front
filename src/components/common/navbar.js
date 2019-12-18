@@ -1,34 +1,19 @@
-import React, { useState, useCallback, useEffect } from "react";
-import axios from "axios";
-
+import React from "react";
 
 import './navbar.css';
 
 export const NavBar = (props) => {
-  const [topWorks, setTopWorks] = useState([]);
-  const fetchData = useCallback( async() => {
-    let topWorksData = await axios.get('/api/v1/works/top')
-      .then(response => response.data)
-      .catch(error => console.log(error));
-
-      setTopWorks(topWorksData);
-  },[]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
   return (
     
     <ul className="left-navigation-bar">
       <li>Top</li>
       <li>Works</li>
       { 
-        topWorks.map((work, index) =>  {
+        props.works?props.works.map((work, index) =>  {
           return(
             <li className="works-child" key={index}>Work{index+1}</li>
           );
-        })
+        }):""
       }
       <li>All Works</li>
       <li>Profile</li>
