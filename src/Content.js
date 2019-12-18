@@ -80,5 +80,12 @@ export const Content = () => {
     };
   })();
 }
+export const ContentFallback = () => {
+  return (
+    <div>
+      loading...
+    </div>
+  );
+}
 
-export default Content;
+export default {Content,ContentFallback};
