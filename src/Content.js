@@ -12,7 +12,6 @@ let cache;
 export const Content = () => {
   const [anchors, setAnchors] = useState(['top', 'works', 'allWorks', 'profile', 'contact']);
   if(cache){
-    console.log(cache);
     return(
       <div className="container">
         <NavBar works={cache.topWorks}/>
@@ -54,7 +53,6 @@ export const Content = () => {
   }
 
   throw (async() => {
-    console.log(anchors);
     let user = await axios.get('/api/v1/users/1')
       .then(response => response.data)
       .catch(error => console.log(error));
@@ -71,7 +69,6 @@ export const Content = () => {
         return response.data
       })
       .catch(error => console.log(error));
-    console.log(anchors);
     cache = {
       user: user,
       skills: skills,
