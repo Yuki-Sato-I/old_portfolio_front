@@ -11,7 +11,7 @@ export const NavBar = (props) => {
       { 
         props.works?props.works.map((work, index) =>  {
           return(
-            <li className="works-child" key={index}>Work{index+1}</li>
+            <li className="works-child" key={index}>0{index+1}</li>
           );
         }):""
       }

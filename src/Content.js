@@ -4,8 +4,9 @@ import ReactFullpage from '@fullpage/react-fullpage';
 
 // my component
 import './App.css';
-import { Top } from './components/pages/top/top'
+import { Top } from './components/pages/top/Top'
 import { NavBar } from './components/common/navbar'
+import { Work } from "./components/pages/work/Work";
 
 let cache;
 
@@ -27,22 +28,26 @@ export const Content = () => {
                 <Top user={cache.user}
                     skills={cache.skills}/>
                 <div className="section">
-                  <p>Section 2</p>
+                  <p>Works</p>
+                </div>
+                {
+                  cache.topWorks.map((work, index) => {
+                    return (
+                      <Work key={index} work={work} number={index}/>
+                    );
+                  })
+                }
+                <div className="section">
+                  <p>All Works</p>
                 </div>
                 <div className="section">
-                  <p>Section 3</p>
-                </div>
-                <div className="section">
-                  <p>Section 4</p>
+                  <p>Profile</p>
                   {/* <button onClick={() => fullpageApi.moveSectionDown()}>
                     Click me to move down
                   </button> */}
                 </div>
                 <div className="section">
-                  <p>Section 5</p>
-                </div>
-                <div className="section">
-                  <p>Section 6</p>
+                  <p>Contact</p>
                 </div>
               </ReactFullpage.Wrapper>
             );

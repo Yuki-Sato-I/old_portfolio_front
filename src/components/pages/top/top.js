@@ -1,6 +1,6 @@
 import React from "react";
 
-import './top.css';
+import './Top.css';
 
 export const Top = (props) =>  {
   return (
