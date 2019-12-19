@@ -7,11 +7,12 @@ import './App.css';
 import { Top } from './components/pages/top/Top'
 import { NavBar } from './components/common/navbar'
 import { Work } from "./components/pages/work/Work";
+import Contact from "./components/pages/contact/Contact";
 
 let cache;
 
 export const Content = () => {
-  const [anchors, setAnchors] = useState(['top', 'works', 'allWorks', 'profile', 'contact']);
+  const [anchors, setAnchors] = useState(['こんにちは,佐藤裕紀のポートフォリオサイトへようこそ!!', 'ここを使って自己紹介をするのは画期的でしょ??', '俺', 'お問い合わせは下記フォームから送ってね']);
   if(cache){
     return(
       <div className="container">
@@ -38,17 +39,12 @@ export const Content = () => {
                   })
                 }
                 <div className="section">
-                  <p>All Works</p>
-                </div>
-                <div className="section">
                   <p>Profile</p>
                   {/* <button onClick={() => fullpageApi.moveSectionDown()}>
                     Click me to move down
                   </button> */}
                 </div>
-                <div className="section">
-                  <p>Contact</p>
-                </div>
+                <Contact />
               </ReactFullpage.Wrapper>
             );
           }}
@@ -69,7 +65,7 @@ export const Content = () => {
     let topWorks = await axios.get('/api/v1/works/top')
       .then(response => {
         response.data.map((work, index) => {
-          setAnchors(anchors.splice(2+index, 0, `work${index+1}`));
+          setAnchors(anchors.splice(2+index, 0, `作ってきたものを紹介するね${index+1}`));
         })
         return response.data
       })

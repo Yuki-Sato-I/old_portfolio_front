@@ -15,7 +15,6 @@ export const NavBar = (props) => {
           );
         }):""
       }
-      <li>All Works</li>
       <li>Profile</li>
       <li>Contact</li>
     </ul>
