@@ -16,7 +16,7 @@ export const Work = (props) =>  {
             <h1 className="work-title">{work.title}</h1>
           </div>
           <div className="work-content">
-            <span><img src={work.image_url} height="400" width="600" /></span>
+            <span><img src={work.image_url} height="350" width="600" /></span>
             <p className="work-p work-p-content">{work.content}</p>
             <p className="work-p">
               <a href={work.url}>

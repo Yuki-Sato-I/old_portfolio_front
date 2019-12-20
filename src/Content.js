@@ -76,7 +76,6 @@ export const Content = () => {
       topWorks: topWorks,
       anchors: anchors
     };
-    console.log(cache);
   })();
 }
 export const ContentFallback = () => {
