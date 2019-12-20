@@ -7,7 +7,8 @@ import './App.css';
 import { Top } from './components/pages/top/Top'
 import { NavBar } from './components/common/navbar'
 import { Work } from "./components/pages/work/Work";
-import Contact from "./components/pages/contact/Contact";
+import { Profile } from "./components/pages/profile/Profile";
+import { Contact } from "./components/pages/contact/Contact";
 
 let cache;
 
@@ -38,14 +39,13 @@ export const Content = () => {
                     );
                   })
                 }
-                <div className="section">
-                  <p>Profile</p>
-                  {/* <button onClick={() => fullpageApi.moveSectionDown()}>
+                <Profile user={cache.user} skills={cache.skills}/>                
+                {/* <button onClick={() => fullpageApi.moveSectionDown()}>
                     Click me to move down
                   </button> */}
-                </div>
                 <Contact />
               </ReactFullpage.Wrapper>
+              
             );
           }}
         />

@@ -1,0 +1,52 @@
+.user-name p {
+  font-size: 20px;
+  margin: 0 0 30px 100px;
+}
+
+.user-name h1{
+  font-size: 80px;
+  margin: 0 0 10px 80px;
+}
+
+
+.user-image img {
+  height: 50vh;
+  width: 350px;
+}
+
+.user-image {
+  text-align: center;
+}
+
+.user-image .user-icons {
+  font-size: 50px;
+}
+
+.user-image, .user-content {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.user-skills, .user-service, .user-profile {
+  height: 19vh;
+}
+
+.user-skills {
+  width: 80%;
+}
+
+.user-skills p {
+  word-break: normal;
+}
+
+
+.user-history-link {
+  text-align: center;
+}
+
+.user-history-link a {
+  padding: 10px 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}

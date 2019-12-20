@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // my component
 import './App.css';
 import { WorkDetail } from './components/pages/work/WorkDetail';
+import { HistoryList } from './components/pages/history/HistoryList';
 
 import { Content, ContentFallback } from './Content'
 
@@ -18,6 +19,7 @@ export const App = () =>  {
         }}
       />
       <Route path='/works/:id' component={WorkDetail}/>
+      <Route path='/histories' component={HistoryList}/>
     </Router>
   );
 }

@@ -11,7 +11,7 @@ export const Top = (props) =>  {
         <p className="top-user-skills">
           {props.skills? props.skills.map((skill, index) => {
             return(
-              <span key={index}>{(index == 0)?`${skill.name}`:` / ${skill.name}`}</span>
+              <span key={index}>{(index === 0)?`${skill.name}`:` / ${skill.name}`}</span>
               );
           }): ""}
         </p>
