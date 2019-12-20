@@ -1,0 +1,32 @@
+.work-section {
+  margin-left: 70px;
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+}
+
+.work-number {
+  display: inline-block;
+  font-size: 170px;
+  font-weight: bold;
+  color: #272727;
+  -webkit-text-stroke: 1px white;
+}
+
+.work-title {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 70px;
+  position: relative;
+    z-index: 10;
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 70px;
+}
+
+.work-content {
+  width: 600px;
+  position: absolute;
+   top: 90px;
+   left: 300px;
+}
