@@ -17,13 +17,13 @@ export const Work = (props) =>  {
           </div>
           <div className="work-content">
             <span><img height="400" width="600" /></span>
-            <p>{work.content}</p>
-            <p>
+            <p className="work-p">{work.content}</p>
+            <p className="work-p">
               <a href={work.url}>
                 <FontAwesomeIcon icon={['fas', 'link']} style={{ color: "white", margin: '0 10px 0 0' }}/>関連URL
               </a>
             </p>
-            <p className="work-more-detail">
+            <p className="work-more-detail work-p">
               <Link to={`/works/${work.id}`}>
                 More Detail<FontAwesomeIcon icon={['fas', 'caret-square-right']} style={{ color: "red", margin: '0 0 0 10px' }}/>
               </Link>
