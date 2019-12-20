@@ -18,11 +18,12 @@ code {
 
 a {
 	text-decoration: none;
-	color: val(--main-text-color);
+  color: white;
+  display: inline-block;
 }
 a:hover{
     text-decoration: none;
-    color: val(--main-text-color);
+    color: white;
 }
 ul {
 	list-style: none;

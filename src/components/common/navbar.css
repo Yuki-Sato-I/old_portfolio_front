@@ -11,7 +11,7 @@
 .left-navigation-bar li{
   padding-left: 10px;
   width: 100px;
-  height: calc(100% / 5); 
+  height: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */

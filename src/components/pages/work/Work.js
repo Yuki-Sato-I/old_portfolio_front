@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 // my component
-import { WorkDetail } from './WorkDetail'
+import './Work.css'
 
 export const Work = (props) =>  {
   const work = props.work;
@@ -18,6 +18,7 @@ export const Work = (props) =>  {
           <p>{work.content}</p>
           <a href={work.url}>関連URL</a>
         </div>
+        <Link to={`/works/${work.id}`}>詳細ページ</Link>
       </div>
   )
 }
