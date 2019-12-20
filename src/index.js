@@ -4,7 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from "axios";
+import { library } from '@fortawesome/fontawesome-svg-core'; //fontawesomeのコアファイル
+import { fab } from '@fortawesome/free-brands-svg-icons'; //fontawesomeのbrandアイコンのインポート
+import { fas } from '@fortawesome/free-solid-svg-icons'; //fontawesomeのsolidアイコンのインポート
+import { far } from '@fortawesome/free-regular-svg-icons'; //fontawesomeのregularアイコンのインポート
 
+library.add(fab, fas, far); //他のコンポーネントから簡単に呼び出せるようにするための登録処理？
 //api server host
 axios.defaults.baseURL = process.env.REACT_APP_API_ENDPOINT;
 
