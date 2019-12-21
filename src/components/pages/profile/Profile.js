@@ -7,8 +7,6 @@ import './Profile.css';
 export const Profile = (props) =>  {
   const user = props.user
   const skills = props.skills
-  console.log(user);
-  console.log(skills);
   return (
     <div className="section">
       <div className="profile-section">

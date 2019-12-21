@@ -14,16 +14,24 @@ let cache;
 
 export const Content = () => {
   const [anchors, setAnchors] = useState(['こんにちは,佐藤裕紀のポートフォリオサイトへようこそ!!', 'ここを使って自己紹介をするのは画期的でしょ??', '俺', 'お問い合わせは下記フォームから送ってね']);
+  const onLeave = (origin, destination, direction) => {
+    console.log("Leaving section " + origin.index);
+  }
+  const afterLoad = (origin, destination, direction) => {
+    console.log("After load: " + destination.index);
+  }
   if(cache){
     return(
       <div className="container">
         <NavBar works={cache.topWorks}/>
         <ReactFullpage
           //fullpage options
-          licenseKey = {'YOUR_KEY_HERE'}
+          licenseKey={'YOUR_KEY_HERE'}
           resize={true}
-          scrollingSpeed = {1000} /* Options here */
-          anchors= { cache.anchors }
+          scrollingSpeed={1000} /* Options here */
+          anchors={cache.anchors}
+          onLeave={onLeave.bind(this)}
+          afterLoad={afterLoad.bind(this)}
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
