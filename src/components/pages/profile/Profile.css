@@ -32,6 +32,10 @@
   height: 19vh;
 }
 
+.user-service, .user-profile {
+  width: 90%;
+}
+
 .user-skills {
   width: 80%;
 }
@@ -46,7 +50,7 @@
 }
 
 .user-history-link a {
-  padding: 10px 5px;
+  padding: 10px 25px;
   border: 1px solid white;
   border-radius: 10px;
 }
