@@ -1,0 +1,45 @@
+.contact-section h2 {
+  text-align: center;
+}
+
+.contact-form {
+  width: 60vw;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background-color: lightgray;
+}
+
+.contact-form label {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+  color: black;
+}
+
+.contact-form input {
+  width: 30%;
+  border: 1px solid gray;
+}
+
+.contact-form textarea {
+  width: calc(100% - 200px);
+  border: 1px solid gray;
+}
+
+.submit-btn-p {
+  text-align: center;
+}
+
+.submit-btn-p button {
+  background-color: #ff6a5c;
+  height: 40px;
+  width: 90px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+.submit-btn-p button:hover {
+  background-color: #fda299;
+}
