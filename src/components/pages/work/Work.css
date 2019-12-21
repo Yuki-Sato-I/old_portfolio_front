@@ -35,8 +35,14 @@
    left: 300px;
 }
 
+.work-content img {
+  height: 50vh;
+  width: 40vw;
+}
+
 .work-p-content {
-  height: 150px;
+  height: 10vh;
+  overflow: scroll;
 }
 
 .work-more-detail {
