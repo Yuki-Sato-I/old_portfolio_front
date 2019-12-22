@@ -12,14 +12,35 @@ import { Profile } from "./components/pages/profile/Profile";
 import { Contact } from "./components/pages/contact/Contact";
 const {Anime} = ReactAnime
 let cache;
-
+// var delay = 500; //milliseconds
+// var timeoutId;
+// var animationIsFinished = false;
 export const Content = () => {
   const [anchors, setAnchors] = useState(['こんにちは,佐藤裕紀のポートフォリオサイトへようこそ!!', 'ここを使って自己紹介をするのは画期的でしょ??', '俺', 'お問い合わせは下記フォームから送ってね']);
+  const [control, setControl] = useState();
+  const changeControl = (order) => {
+    setControl(order)
+  };
+  // const onLeave = (origin, destination, direction) => {
+  //     clearTimeout(timeoutId);
+  //     //changeControl("reverse");
+  //     timeoutId = setTimeout(() => {
+  //       animationIsFinished = true;
+  //         console.log("Leaving section " + origin.index);
+  //         window.fullpage_api.moveTo(destination.index+1);
+  //         console.log("移動しました" + origin.index + (destination.index));
+  //       }, delay);
+
+  //     return animationIsFinished;
+  // }
   const onLeave = (origin, destination, direction) => {
-    console.log("Leaving section " + origin.index);
+    changeControl("reset");
+    // changeControl("reverse");
   }
 
   const afterLoad = (origin, destination, direction) => {
+    //animationIsFinished = false;
+    changeControl("play");
     console.log("After load: " + destination.index);
   }
 
@@ -34,7 +55,6 @@ export const Content = () => {
         <ReactFullpage
           //fullpage options
           licenseKey={'YOUR_KEY_HERE'}
-          resize={true}
           scrollingSpeed={1000} /* Options here */
           anchors={cache.anchors}
           onLeave={onLeave.bind(this)}
@@ -50,14 +70,11 @@ export const Content = () => {
                 {
                   cache.topWorks.map((work, index) => {
                     return (
-                      <Work key={index} work={work} number={index}/>
+                      <Work key={index} work={work} number={index} control={control}/>
                     );
                   })
                 }
-                <Profile user={cache.user} skills={cache.skills}/>                
-                {/* <button onClick={() => fullpageApi.moveSectionDown()}>
-                    Click me to move down
-                  </button> */}
+                <Profile user={cache.user} skills={cache.skills}/>
                 <Contact />
               </ReactFullpage.Wrapper>
               
