@@ -40,7 +40,7 @@ export const Work = (props) => {
                 opacity: [0, 1],
                 translateX: [-700, 0],
                 easing: "easeOutSine",
-                duration: 800,
+                duration: 700,
                 delay: 0,
               },
               {
@@ -48,8 +48,8 @@ export const Work = (props) => {
                 opacity: [0, 1],
                 translateX: [700, 0],
                 easing: "easeOutSine",
-                duration: 800,
-                // delay: -1000,
+                duration: 700,
+                delay: 0,
               },
               {
                 targets: ".work-p",

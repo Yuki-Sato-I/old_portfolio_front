@@ -35,7 +35,24 @@ export const Content = () => {
   // }
   const onLeave = (origin, destination, direction) => {
     changeControl("reset");
+    changeControl("play");
     // changeControl("reverse");
+  }
+
+  const afterRender = () => {
+    console.log('afterRender');
+  }
+
+  const afterResize = () => {
+    console.log('afterResize');
+  }
+  
+  const afterReBuild = () => {
+    console.log('afterReBuild');
+  }
+
+  const afterResponsive = () => {
+    console.log('afterResponsive');
   }
 
   const afterLoad = (origin, destination, direction) => {
@@ -59,6 +76,10 @@ export const Content = () => {
           anchors={cache.anchors}
           onLeave={onLeave.bind(this)}
           afterLoad={afterLoad.bind(this)}
+          afterRender={afterRender.bind(this)}
+          afterResize={afterResize.bind(this)}
+          afterReBuild={afterReBuild.bind(this)}
+          afterResponsive={afterResponsive.bind(this)}
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
