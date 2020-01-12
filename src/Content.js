@@ -12,20 +12,22 @@ import { Profile } from "./components/pages/profile/Profile";
 import { Contact } from "./components/pages/contact/Contact";
 const {Anime} = ReactAnime
 let cache;
-// var delay = 500; //milliseconds
-// var timeoutId;
-// var animationIsFinished = false;
+
 export const Content = () => {
   const [anchors, setAnchors] = useState(['こんにちは,佐藤裕紀のポートフォリオサイトへようこそ!!', 'ここを使って自己紹介をするのは画期的でしょ??', '俺', 'お問い合わせは下記フォームから送ってね']);
   const [control, setControl] = useState();
   const changeControl = (order) => {
     setControl(order)
   };
+  // var delay = 1500; //milliseconds
+  // var timeoutId;
+  // var animationIsFinished = false;
   // const onLeave = (origin, destination, direction) => {
   //     clearTimeout(timeoutId);
-  //     //changeControl("reverse");
+  //     console.log(animationIsFinished);
+  //     changeControl("reverse");
   //     timeoutId = setTimeout(() => {
-  //       animationIsFinished = true;
+  //         animationIsFinished = true;
   //         console.log("Leaving section " + origin.index);
   //         window.fullpage_api.moveTo(destination.index+1);
   //         console.log("移動しました" + origin.index + (destination.index));
@@ -36,7 +38,7 @@ export const Content = () => {
   const onLeave = (origin, destination, direction) => {
     changeControl("reset");
     changeControl("play");
-    // changeControl("reverse");
+    console.log("onLeave");
   }
 
   const afterRender = () => {
@@ -56,8 +58,6 @@ export const Content = () => {
   }
 
   const afterLoad = (origin, destination, direction) => {
-    //animationIsFinished = false;
-    changeControl("play");
     console.log("After load: " + destination.index);
   }
 
@@ -72,7 +72,7 @@ export const Content = () => {
         <ReactFullpage
           //fullpage options
           licenseKey={'YOUR_KEY_HERE'}
-          scrollingSpeed={1000} /* Options here */
+          scrollingSpeed={800} /* Options here */
           anchors={cache.anchors}
           onLeave={onLeave.bind(this)}
           afterLoad={afterLoad.bind(this)}

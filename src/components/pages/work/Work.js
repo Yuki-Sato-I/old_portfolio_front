@@ -41,7 +41,7 @@ export const Work = (props) => {
                 translateX: [-700, 0],
                 easing: "easeOutSine",
                 duration: 700,
-                delay: 0,
+                delay: 600,
               },
               {
                 targets: ".work-content span img",
@@ -54,13 +54,10 @@ export const Work = (props) => {
               {
                 targets: ".work-p",
                 opacity: [0, 1],
-                duration: 1000,
+                duration: 700,
                 delay: 0
               }
             ]}
-            // _onMouseOut={
-            //   workLeave()
-            // }
           >
             <div className="work-header">
               <span className="work-number">0{num+1}</span>
